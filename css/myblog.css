@@ -142,3 +142,30 @@ body {
   text-align: right;
   margin-top: 5px;
 }
+
+.entry {
+  font-size: 18px;
+}
+
+.entry p {
+  margin-top: 10px;
+}
+
+.entry blockquote {
+  border-left: 4px solid #e41c1e;
+}
+
+.entry blockquote p {
+  margin-top: 0;
+}
+
+#footer {
+  margin: 20px ;
+  text-align: center;
+  padding: 10px;
+}
+
+#footer p {
+  margin-top: 10px;
+  line-height: 20px;
+}
