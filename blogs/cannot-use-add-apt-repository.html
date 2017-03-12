@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>Linux下无法使用add-apt-repository命令</title>
+</head>
+<body>
+  <article class="blog-detail">
+    <h1 class="title">Linux下无法使用add-apt-repository命令</h1>
+    <div class="pubtime">03月11日</div>
+    <div class="clear"></div>
+    <div class="entry-content">
+      <p>Error:</p>
+      <blockquote>
+        add-apt-repository command not found
+      </blockquote>
+      <p>Solution</p>
+      <blockquote>
+        sudo apt-get install python-software-properties <br />
+        sudo apt-get update
+      </blockquote>
+      <p><img src="../images/screenshot_0312.png" alt="code"></p>
+      <p>Then</p>
+      <blockquote>
+        sudo apt install software-properties-common <br />
+        sudo apt-get update
+      </blockquote>
+      <p>Done</p>
+    </div>
+  </article>
+</body>
+</html>

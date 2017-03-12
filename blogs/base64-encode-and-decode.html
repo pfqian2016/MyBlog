@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/main.css">
+  <title>Base64 Encode and Decode</title>
+</head>
+<body>
+  <article class="blog-detail">
+    <h1 class="title">Base64 Encode and Decode</h1>
+    <div class="pubtime">03月11日</div>
+    <div class="clear"></div>
+    <div class="entry-content">
+      <p>Base64 Encode:</p>
+      <blockquote>
+        private String filePathToString(String filePath) <br>
+    {  <br>
+        &nbsp;&nbsp;byte[] audioBytes;  <br>
+
+        &nbsp;&nbsp;String audioString="";  <br>
+        &nbsp;&nbsp;try  <br>
+      &nbsp;&nbsp;  {  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;ByteArrayOutputStream baos=new ByteArrayOutputStream();  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;FileInputStream fis= null;  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;fis = new FileInputStream(new File(filePath));  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;byte[] buf=new byte[1024];  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;int n;  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;while (-1!=(n=fis.read(buf)))  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;baos.write(buf,0,n);  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;audioBytes=baos.toByteArray();  <br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;audioString= Base64.encodeToString(audioBytes, Base64.DEFAULT);  <br>
+
+        &nbsp;&nbsp;} catch (Exception e)  <br>
+        &nbsp;&nbsp;{  <br>
+          &nbsp;&nbsp;  e.printStackTrace();  <br>
+        &nbsp;&nbsp;}  <br>
+        &nbsp;&nbsp;return audioString;  <br>
+
+    }  <br>
+      </blockquote>
+      <p>Base64 Decode:</p>
+      <blockquote>
+        private String stringToFilePath(String fileString) throws IOException { <br>
+       &nbsp;&nbsp;byte[] bytesFile=Base64.decode(fileString,Base64.DEFAULT); <br>
+       &nbsp;&nbsp;String decodedString=new String(bytesFile);<br>
+       &nbsp;&nbsp;File file = null;<br>
+       &nbsp;&nbsp;try <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+          &nbsp;&nbsp;&nbsp;&nbsp; String fileName=generateFileName();<br>
+          &nbsp;&nbsp;&nbsp;&nbsp; file = new File(Environment.getExternalStorageDirectory() + "/"+fileName);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;   FileOutputStream fos = new FileOutputStream(file, true);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;   fos.write(bytesFile);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;   fos.close();<br>
+
+
+       &nbsp;&nbsp;&nbsp;&nbsp;}catch (Exception e) <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     e.printStackTrace();<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return file.getAbsolutePath();<br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+      </blockquote>
+    </div>
+  </article>
+</body>
+</html>
