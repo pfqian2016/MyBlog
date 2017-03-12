@@ -50,12 +50,12 @@ body {
   padding: 0;
 }
 
-#sidebar .buttons li {
+/*#sidebar .buttons li {
   display: block;
   height: 45px;
   line-height: 45px;
   width: 100%;
-}
+}*/
 #sidebar .buttons li a {
   display: block;
   width: 100%;
@@ -134,7 +134,7 @@ body {
 }
 .pubtime {
   float: right;
-  width: 130px;
+  width: 100px;
   position: relative;
   font-size: 1.2em;
   color: #555;
