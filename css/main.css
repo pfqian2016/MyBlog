@@ -127,7 +127,7 @@ body {
   height: 80px;
   clear: both;
 }
-.title {
+article .title {
   margin: 0;
   width: auto;
   float: left;
@@ -176,13 +176,15 @@ body {
 }
 
 /*------entry content begins------*/
-  .clear {
+  /*.clear {
     height: 0;
     clear: both;
-  }
+  }*/
 
   .entry-content {
+    margin-top: 20px;
     font-size: 18px;
+    clear: both;
   }
 
   .entry-content p {
@@ -193,5 +195,64 @@ body {
     border-left: 4px solid #5d6a6a;
     padding-left: 10px;
     background-color: #f8f8f8;
+  }
+
+  .about-me {
+    max-width: 965px;
+    margin: 0 auto;
+  }
+
+  .about-me p {
+    padding: 0 20px;
+    font-size: 18px;
+    color: #555;
+    font-family: "Microsoft YaHei",sans-serif;
+  }
+
+  .about-me .title {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    font-weight: 400;
+    color: #777;
+  }
+  .about-me:nth-child(odd) {
+    background: #fafafa;
+  }
+
+  .about-me ul {
+    list-style-type: none;
+  }
+
+  .about-me ul li {
+    margin: 5px ;
+    padding: 10px;
+    border-left: 8px solid #03cc85;
+    border-bottom: 1px solid #f0f0f0;
+    color: #555;
+    font-family: "Microsoft YaHei",sans-serif;
+  }
+
+   #edu-exp li {
+    margin-right: 40px;
+    height: 50px;
+    border-left: none;
+    border-right: 8px solid #03cc85;
+  }
+  #edu-exp .title {
+    text-align: right;
+  }
+  #edu-exp .year {
+    float: right;
+    margin: 0;
+    padding: 0 0 0 20px;
+    border-left: 2px solid #f0f0f0;
+    line-height: 50px;
+  }
+
+   #edu-exp .school {
+    float: right;
+    margin: 0 10px;
+    padding: 0;
+    line-height: 50px;
   }
 /*------entry content ends------*/
