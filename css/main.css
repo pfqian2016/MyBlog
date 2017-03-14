@@ -215,7 +215,7 @@ article .title {
     font-weight: 400;
     color: #777;
   }
-  .about-me:nth-child(odd) {
+  .about-me:nth-child(even) {
     background: #fafafa;
   }
 
@@ -223,7 +223,7 @@ article .title {
     list-style-type: none;
   }
 
-  .about-me ul li {
+  #favorites ul li {
     margin: 5px ;
     padding: 10px;
     border-left: 8px solid #03cc85;
@@ -232,27 +232,44 @@ article .title {
     font-family: "Microsoft YaHei",sans-serif;
   }
 
-   #edu-exp li {
+   /*#edu-exp li {
     margin-right: 40px;
+    clear: both;
     height: 50px;
     border-left: none;
     border-right: 8px solid #03cc85;
-  }
+  }*/
+
   #edu-exp .title {
     text-align: right;
   }
-  #edu-exp .year {
+
+  #edu-exp ul li {
+    margin-bottom: 25px;
+  }
+  #edu-exp .date {
     float: right;
-    margin: 0;
-    padding: 0 0 0 20px;
-    border-left: 2px solid #f0f0f0;
-    line-height: 50px;
+    width: 80px;
+    padding: 8px 12px;
+    margin-right: 20px;
+    color: #fff;
+    background-color: rgba(03,204,133,.7);
   }
 
-   #edu-exp .school {
-    float: right;
-    margin: 0 10px;
+  #edu-exp .school-info {
+    margin-right: 150px;
+    text-align: right;
+    color: #555;
+  }
+
+  #edu-exp .school-info h4 {
+    margin: 5px;
     padding: 0;
-    line-height: 50px;
+    font-weight: 500;
+  }
+
+  #edu-exp .school-info p {
+    margin: 5px;
+    padding: 0;
   }
 /*------entry content ends------*/
