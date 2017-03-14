@@ -130,12 +130,12 @@ body {
 article .title {
   margin: 0;
   width: auto;
-  float: left;
+  /*float: left;*/
 }
 .pubtime {
-  float: right;
+  /*float: right;*/
   width: 100px;
-  position: relative;
+  /*position: relative;*/
   font-size: 1.2em;
   color: #555;
   text-align: right;
@@ -231,14 +231,6 @@ article .title {
     color: #555;
     font-family: "Microsoft YaHei",sans-serif;
   }
-
-   /*#edu-exp li {
-    margin-right: 40px;
-    clear: both;
-    height: 50px;
-    border-left: none;
-    border-right: 8px solid #03cc85;
-  }*/
 
   #edu-exp .title {
     text-align: right;
