@@ -4,34 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
   <title>About Me</title>
 </head>
 <body>
-  <div class="entry-content">
-    <div class="about-me">
-      <h1 class="title">关于我</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-         sed do eiusmod tempor incididunt ut labore et dolore magna
-         aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-         ullamco laboris nisi ut aliquip ex ea commodo consequat.
-         Duis aute irure dolor in reprehenderit in voluptate velit
-          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-           occaecat cupidatat non proident, sunt in culpa qui officia
-           deserunt mollit anim id est laborum.</p>
+    <div class="entry-content">
+      <div class="container">
+      <div class="about-me">
+        <h1 class="title">关于我</h1>
+          <h3 class="h3 text-center"> 技术栈</h3>
+          <div class="row">
+            <div class="col-xs-4 skills"><img src="./images/html5.png" alt="html5"><br>HTML5</div>
+            <div class="col-xs-4 skills"><img src="./images/css3.png" alt="css3"><br>CSS3</div>
+            <div class="col-xs-4 skills"><img src="./images/javascript.png" alt="javascript"><br>JavaScript</div>
+            <div class="col-xs-4 skills"><i class="fa fa-github fa-4x" style="color:#3eeeb0"></i><br>GitHub</div>
+            <div class="col-xs-4 skills"><img src="./images/nodejs.png" alt="nodejs"><br>Node.js</div>
+            <div class="col-xs-4 skills"><img src="./images/jquery.png" alt="jQuery"><br>jQuery.js</div>
+          </div>
     </div>
-    <div id="favorites" class="about-me">
-      <h1 class="title">兴趣爱好</h1>
-          <ul>
-            <li>爱羽毛球，爱跑步</li>
-            <li>伪五迷，钟意粤语歌</li>
-            <li>爱旅游，爱拍风光</li>
-            <li>爱四轮也爱两轮</li>
-          </ul>
-    </div>
-    <div id="edu-exp" class="about-me">
-      <h1 class="title">教育&amp;工作经历</h1>
-
+      <div id="edu-exp" class="about-me">
+        <h1 class="title">教育&amp;工作经历</h1>
         <div>
           <ul>
             <li>
@@ -56,9 +51,19 @@
               </div>
             </li>
           </ul>
-        </div>
+          </div>
+        <div id="favorites" class="about-me">
+          <h1 class="title">兴趣爱好</h1>
+          <ul>
+            <li>爱羽毛球，爱跑步</li>
+            <li>伪五迷，钟意粤语歌</li>
+            <li>爱旅游，爱拍风光</li>
+            <li>爱四轮也爱两轮</li>
+          </ul>
+          </div>
 
-    </div>
+        </div>
+      </div>
   </div>
 </body>
 </html>
