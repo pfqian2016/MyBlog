@@ -210,8 +210,11 @@ body {
   }
 
   .about-me {
-    /*max-width: 965px;*/
+    min-width: 380px;
+    max-width: 965px;
     margin: 0 auto;
+    color: #555;
+    font-family: "Microsoft YaHei",sans-serif;
   }
 
   .about-me p {
@@ -220,7 +223,9 @@ body {
     color: #555;
     font-family: "Microsoft YaHei",sans-serif;
   }
-
+  .about-me ul {
+    list-style-type: none;
+  }
   .about-me .title {
     padding-bottom: 10px;
     border-bottom: 2px solid #ddd;
@@ -230,26 +235,48 @@ body {
   .about-me:nth-child(even) {
     background: #fafafa;
   }
-
-  .about-me ul {
-    list-style-type: none;
+  #intro ul {
+    list-style-type:disc;
   }
-
-  #favorites ul li {
+  #intro ul > li {
+    padding: 5px;
+  }
+  .skill-group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+  }
+  #my-skills .skills {
+    width: 30%;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .about-me h1 {
+    text-align: center;
+  }
+  #about-wrapper {
+    display: flex;
+    margin: 0 auto;
+    max-width: 965px;
+    width: auto;
+    height: auto;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  #favorites ul > li {
     margin: 5px ;
     padding: 10px;
-    border-left: 8px solid #03cc85;
+    border-left: 6px solid #03cc85;
     border-bottom: 1px solid #f0f0f0;
-    color: #555;
-    font-family: "Microsoft YaHei",sans-serif;
   }
-
-  #edu-exp .title {
-    text-align: right;
-  }
-
-  #favorites .title {
-    text-align: left;
+  #edu-exp {
+    background: #fff;
   }
   #edu-exp ul li {
     margin-bottom: 25px;
@@ -274,24 +301,8 @@ body {
     padding: 0;
     font-weight: 500;
   }
-
   #edu-exp .school-info p {
     margin: 5px;
     padding: 0;
-  }
-  .entry-content  ul {
-    list-style-type: none;
-  }
-
-  .entry-content li a{
-    width: 100px;
-    margin: 10px 0;
-  }
-
-  .entry-content .skills {
-    line-height: 30px;
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 20px;
   }
 /*------entry content ends------*/
