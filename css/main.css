@@ -306,3 +306,28 @@ body {
     padding: 0;
   }
 /*------entry content ends------*/
+/*demo begins*/
+.portfolio {
+  max-width: 965px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  background: #ddf0ed;
+}
+.grid ul {
+  display: flex;
+  list-style-type: none;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.grid ul li {
+  width: 400px;
+  margin: 15px 0;
+}
+.grid ul li img {
+  width: 100%;
+  height: auto;
+}
+/*demo ends*/
