@@ -24,4 +24,9 @@ $(document).ready(function(){
     }
     console.log();
   });
+
+  $("#submit").click(function(event){
+    event.preventDefault();
+    alert("Not supported for now");
+  })
 });

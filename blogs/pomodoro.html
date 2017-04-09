@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/blog-details.css">
+  <title>Pomodoro</title>
+</head>
+<body>
+    <div class="blog-container">
+      <h1 class="blog-title">网页番茄钟APP(Pomodoro timer)</h1>
+      <p>最终效果图如下所示：</p>
+      <img src="img/pomodoro-session.png" alt="session" class="blog-image">
+      <img src="img/pomodoro-break.png" alt="break" class="blog-image">
+      <p>这个番茄钟主要的功能有三个：</p>
+      <ol>
+        <li>修改休息时间</li>
+        <li>修改工作时间</li>
+        <li>显示timer</li>
+      </ol>
+      <p>修改时间的部分比较简单，只是需要注意一点就是在时间为1分钟的时候不能让时间继续减少了，
+        所以在time===1时将"-"这个button设置为disabled</p>
+        <pre class="block-code">
+          <ul class="code-numbering">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+          <code class="blog-code">if(breakTime === 1){
+    $("#break-minus").prop("disabled");
+}</code>
+        </pre>
+        <p>接下来就是倒计时的panel编写了，这个panel主要有以下几个功能：</p>
+        <ol>
+          <li>首先，这个panel要实现点击时能够启动timer，再次点击时暂停时间，这里我用一个div里面放了两个p标签
+            来实现，最后将两个点击事件设置在p标签上。</li>
+            <li>在timer运行的时候，需要将改变事件的button也设置为disabled</li>
+            <li>在倒计时的同事可以根据时间来显示一种注水的效果，这个效果通过一个span标签的height属性来动态改变</li>
+          </ol>
+          <p>timer的启动与暂停实现：</p>
+          <pre class="block-code">
+            <ul class="code-numbering">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+              <li>25</li>
+              <li>26</li>
+              <li>27</li>
+            </ul>
+            <code class="blog-code">let counting = false;//whether counting down
+let type = "session";//counting type
+$(".timer").click(function(event){
+    let $target = $(event.target);
+    if($target.is("p")){
+        //TODO start/stop the timer
+        var timer = {
+            start: function(){
+                counting = true;
+                $(".control button").attr("disabled","true");//disable all buttons
+                interval_id = setInterval(function(){
+                    countDown(type);
+                },1000);
+            },
+            stop: function(){
+                counting = false;
+                $(".control button").removeAttr("disabled");//remove
+                clearInterval(interval_id);
+            }
+        };
+        if(!counting){
+            timer.start();
+        }else {
+            timer.stop();
+        }
+    }
+});</code>
+          </pre>
+          <p>倒计时函数的实现：</p>
+          <pre class="block-code">
+            <ul class="code-numbering">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+              <li>25</li>
+              <li>26</li>
+              <li>27</li>
+              <li>28</li>
+              <li>29</li>
+              <li>30</li>
+              <li>31</li>
+              <li>32</li>
+              <li>33</li>
+              <li>34</li>
+              <li>35</li>
+              <li>36</li>
+              <li>37</li>
+              <li>38</li>
+              <li>39</li>
+              <li>40</li>
+              <li>41</li>
+              <li>42</li>
+              <li>43</li>
+              <li>44</li>
+              <li>45</li>
+              <li>46</li>
+              <li>47</li>
+              <li>48</li>
+              <li>49</li>
+              <li>50</li>
+              <li>51</li>
+              <li>52</li>
+              <li>53</li>
+              <li>54</li>
+              <li>55</li>
+              <li>56</li>
+              <li>57</li>
+              <li>58</li>
+              <li>59</li>
+              <li>60</li>
+              <li>61</li>
+              <li>62</li>
+              <li>63</li>
+              <li>64</li>
+              <li>65</li>
+              <li>66</li>
+              <li>67</li>
+              <li>68</li>
+              <li>69</li>
+              <li>70</li>
+            </ul>
+            <code class="blog-code">function countDown(t){
+    //TODO count down,when time === 0,toggle
+    if(t === "session"){
+        //TODO count down session time
+        if(countSession > 0){
+            countSession--;
+            let minute = Math.floor(countSession/60);
+            let second = Math.floor(countSession%60);
+            if(second < 10){
+                second = "0" + second;
+            }
+            $type.text("SESSION");
+            $time.text(minute + ":" + second);
+            let fillHeight = (1-countSession/sessionTime/60) * 100 + "%";
+            let fillColor = "#03bb7a";
+            $(".fill").css({
+                height : fillHeight,
+                background : fillColor
+            });
+        }else {
+            //TODO reset session time and setup break time
+            countSession = sessionTime * 60;
+            type = "break";
+            $(".fill").css({
+                height: 0,
+                background: "transparent"
+            });
+            let minute = Math.floor(countBreak/60);
+            let second = Math.floor(countBreak%60);
+            if(second < 10){
+                second = "0" + second;
+            }
+            $type.text("BREAK");
+            $time.text(minute + ":" + second);
+        }
+    }else if (t === "break"){
+        //TODO count down break time
+        if(countBreak > 0){
+            countBreak--;
+            let minute = Math.floor(countBreak/60);
+            let second = Math.floor(countBreak%60);
+            if(second < 10){
+                second = "0" + second;
+            }
+            $type.text("BREAK");
+            $time.text(minute + ":" + second);
+            let fillHeight = (1-countBreak/breakTime/60) * 100 + "%";
+            let fillColor = "#ea4545";
+            $(".fill").css({
+                height : fillHeight,
+                background : fillColor
+            });
+        }else {
+            //TODO reset break time and setup session time
+            countBreak = breakTime * 60;
+            type = "session";
+            $(".fill").css({
+                height: 0,
+                background: "transparent"
+            });
+            let minute = Math.floor(countSession/60);
+            let second = Math.floor(countSession%60);
+            if(second < 10){
+                second = "0" + second;
+            }
+            $type.text("SESSION");
+            $time.text(minute + ":" + second);
+        }
+    }
+}</code>
+          </pre>
+          <p>最后就是注水标签span的css设置了，随着span标签高度的增加，我们看到的将是一个矩形框似的增长
+            需要将span放在timer的后面，并且将溢出隐藏起来，实现代码：</p>
+          <pre class="block-code">
+              <ul class="code-numbering">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+              </ul>
+              <code class="blog-code">.timer {
+    margin: 30px auto;
+    border: 1px solid #03bb7a;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.timer .fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}</code>
+            </pre>
+            <p>这样一个简单的基于网页的番茄钟app就实现了</p>
+            <p><a href="/demo/pomodoro.html">demo地址</a></p>
+    </div>
+</body>
+</html>
