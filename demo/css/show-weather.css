@@ -1,0 +1,28 @@
+body {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0;
+  color: #333;
+  font-family: 'Microsoft Yahei',sans-serif;
+}
+#today {
+  margin-top: 20px;
+  text-align: center;
+}
+hr {
+  color: #eee;
+}
+#future {
+  display: flex;
+  max-width: 1024px
+  text-align: center;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+.future-temp {
+  min-width: 120px;
+  height: 200px;
+  text-align: center;
+  font-size: 1.2em;
+}

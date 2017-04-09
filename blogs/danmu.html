@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/blog-details.css">
+  <title>Danmu App</title>
+</head>
+<body>
+  <div class="blog-container">
+    <h1>jQuery实现弹幕效果</h1>
+    <p>最终效果如下图：</p>
+    <img src="img/danmu.png" alt="">
+    <p>这个app布局比较简单，由一个input和两个按钮组成，其中一个按钮用于发送消息，另一个用于清除
+        屏幕上已有的弹幕</p>
+    <p>点击post按钮，会将input中的消息发出去，如果为空则会弹出提示框。由于弹幕都是从右往左移动的，
+      所以要对弹幕墙的CSS进行如下的设置：</p>
+    <pre class="block-code">
+      <ul class="code-numbering">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+      <code class="blog-code">.danmu {
+    position: absolute;
+    font-size: 20px;
+    right: 0;
+    z-index: 1;
+}</code>
+    </pre>
+    <p>这里没有对top属性进行赋值是因为稍后可以用js来随机产生一个值给top属性，弹幕的颜色也是由
+        js随机产生一个值</p>
+    <pre class="block-code">
+      <ul class="code-numbering">
+        <li>1</li>
+        <li>2</li>
+      </ul>
+      <code class="blog-code">var randomPos=Math.floor((parseInt($("#screen").innerHeight())-40)*Math.random())-20;
+var randomColor=""+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16)+Math.floor(Math.random()*255).toString(16);</code>
+    </pre>
+    <p>然后将随机的高度和颜色应用到弹幕元素上面，再将这个元素放到弹幕墙上 </p>
+    <pre class="block-code">
+      <ul class="code-numbering">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+      <code class="blog-code">$danmu .css({"top":randomPos+"px","color":"#"+randomColor});
+$danmu.text(text);
+$danmu.prependTo("#screen");
+$edit.val("");//clear input</code>
+    </pre>
+    <p>最后，让产生的这个弹幕在屏幕上移动起来，通过jQuery的.animate()方法实现</p>
+    <pre class="block-code">
+      <ul class="code-numbering">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+      <code class="blog-code">$danmu.animate({left:-pWidth},10000,function(){
+    $(this).remove();
+});</code>
+    </pre>
+    <p>回调函数中使用了.remove()方法让弹幕在移动到左边了过后自动消失</p>
+    <p><a href="/demo/danmu.html">demo地址</a></p>
+  </div>
+</body>
+</html>
