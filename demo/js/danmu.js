@@ -19,7 +19,7 @@ $(document).ready(function(){
     $edit.val("");//clear input
     $edit.attr("autofocus","true");
     var randomTime=Math.floor(Math.random()*5000+5000);
-    $danmu.animate({left:-pWidth},randomTime,function(){
+    $danmu.animate({left:-pWidth},randomTime,"linear",function(){
       $(this).remove();
     });
   });
