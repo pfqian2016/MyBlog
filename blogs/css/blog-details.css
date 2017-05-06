@@ -57,7 +57,6 @@ a {
   line-height: 1.428571429;
   border-left: 10px solid rgba(128, 128, 128, 0.075);
   background-color: rgba(128, 128, 128, 0.05);
-  overflow-x: scroll;
 }
 @media (max-width: 768px) {
   body {

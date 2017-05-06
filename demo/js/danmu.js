@@ -26,4 +26,9 @@ $(document).ready(function(){
   $("#clear").click(function(){
     $("#screen").html("");
   });
+  $("#edit").keydown(function(event){
+    if(event.keyCode === 13){
+      $("#post").trigger("click");
+    }
+  });
 });
