@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="images/icon.jpg">
+  <link rel="stylesheet" href="css/blog-details.css">
+  <title>Mac terminal alias</title>
+</head>
+<body>
+  <div class="blog-container">
+    <h1 class="blog-title">Mac设置alias重启terminal失效的解决方案</h1>
+    <p>alias命令主要是用来设置一些比较常用的又比较长的命令别名，比如:</p>
+    <blockquote>
+      open -a Google\ Chrome --args --disable-web-security --user-data-dir
+    </blockquote>
+    <p>这一句命令完全可以用一句很短的命令来代替，就不需要每次再输那么长一串字符了</p>
+    <blockquote>
+      alias opengoogle='open -a Google\ Chrome --args --disable-web-security --user-data-dir'
+    </blockquote>
+    <p>下次再想输入这个命令直接输opengoogle就可以了。但是其中我遇到了些问题，就是关闭terminal过后
+        设置的alias就失效了，这时可以把alias写到~/.bashrc这个文件里面，如果没有的话用vim直接
+        新建一个就可以了，然而写完过后还要在命令行里输入一句命令才能生效。
+    </p>
+    <blockquote>
+      source ~/.bashrc
+    </blockquote>
+    <p>如果设置这样设置完了过后，退出terminal还是会失效，那么可以看看目录里面有没有.bash_profile文件，
+      没有的话vim新建一个，将source ~/.bashrc写到~/.bash_profile文件里面。这次就可以
+      正常使用了
+    </p>
+  </div>
+</body>
+</html>
