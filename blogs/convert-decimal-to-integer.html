@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="images/icon.jpg">
+  <link rel="stylesheet" href="css/blog-details.css">
+  <title>Convert decimal to integer</title>
+</head>
+<body>
+  <div class="blog-container">
+    <h1>JavaScript将小数转换为整数</h1>
+    <p>1. 使用parseInt()</p>
+    <blockquote>
+      parseInt(4.23, 10); //output: 4
+    </blockquote>
+    <p>2. 使用移位操作符"&gt;&gt;"</p>
+    <blockquote>
+      4.23 &gt;&gt; 0; //output: 4
+    </blockquote>
+    <p>3. 使用按位非操作符"~"</p>
+    <blockquote>
+      ~~4.23; //output: 4
+    </blockquote>
+    <p>4. ES6中新增的Math.trunc()方法</p>
+    <blockquote>
+      Math.trunc(4.23); //output: 4
+    </blockquote>
+    <p>持续更新...</p>
+    <p>参考：<br>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt">parseInt()</a><br>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Right_shift">右移操作符“&gt;&gt;”</a><br>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT">按位非"~"</a><br>
+      <a href="http://es6.ruanyifeng.com/#docs/number#Math对象的扩展">Math.trunc()</a>
+    </p>
+  </div>
+</body>
+</html>
