@@ -5,6 +5,7 @@ $(document).ready(function(){
       $(event.target).parent().addClass("active");
     }
   });
+  //鼠标滚动时，nav随滚动区域变化高亮的item
   $(document).scroll(function(){
     let scroll_distance = $(this).scrollTop();
     let $section = $("#main").find("section");
@@ -22,11 +23,33 @@ $(document).ready(function(){
       $cur_link.removeClass("active");
       $cur_link.parent().find("#"+"tab-"+currentId).addClass("active");
     }
-    console.log();
   });
+  //预加载图片
+  (function(){
+    var images = document.getElementsByClassName('img');
+    for(let i = 0; i < images.length; i++) {
+      let src ='img/' + images[i].alt + '.jpg';
+      preloadNode(images[i]).setSrc(src);
+    }
 
+    function setSrc(src) {
+      this.src = src;
+    }
+    function preloadNode(node) {
+      let img = new Image;
+      img.onload = function() {
+        setSrc.call(node, this.src);
+      }
+      return {
+        setSrc(src) {
+          setSrc.call(node, '/images/loading.gif');
+          img.src = src;
+        }
+      };
+    }
+  })();
   $("#submit").click(function(event){
     event.preventDefault();
     alert("Not supported for now");
-  })
+  });
 });
