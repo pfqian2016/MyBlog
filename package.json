@@ -1,0 +1,10 @@
+{
+  "name":"MyBlog",
+  "version":"1.0.0",
+  "scripts":{
+    "build":"babel js -d lib"
+  },
+  "devDependencies":{
+    "babel-cli":"^6.0.0"
+  }
+}
