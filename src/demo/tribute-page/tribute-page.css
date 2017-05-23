@@ -1,0 +1,51 @@
+body {
+  color: #777;
+}
+.jumbotron {
+  margin-top: 50px;
+  background-color: #eee;
+}
+.thumbnail {
+  padding: 5px;
+  background-color: #fff;
+}
+.thumbnail .caption{
+  padding: 8px;
+  color: #333;
+}
+.thumbnail > img {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.text-center {
+  text-align: center;
+}
+h1, h2, h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 1em;
+}
+h3 {
+  font-size: 1.5em;
+}
+ul {
+  padding-left: 60px;
+}
+ul > li strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+ul > li {
+  font-size: 14px;
+}
+blockquote {
+  padding-left: 45px;
+}
+blockquote footer {
+  color: #777;
+}

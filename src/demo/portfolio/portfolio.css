@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #666;
+  background: #888;
+  font-size: 20px;
+}
+
+#banner .container {
+  padding:0 5px;
+  width: 95%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+#main {
+  background: #888;
+  color: #666;
+  font-size: 20px;
+  position: relative;
+  overflow-y: scroll;
+}
+#about {
+  padding:50px 30px;
+  color: #fff;
+  background-color: #aaa;
+  font-size: 1.3em;
+  text-align: right;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#main > * {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.intro-text {
+  /*float: left;*/
+  max-width: 100%;
+  width: 610px;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-left: 20px;
+  text-align: right;
+  max-width: 675px;
+}
+#about img {
+  margin-top: 60px;
+  margin-right: 20px;
+  width: 250px;
+  height: auto;
+  max-width: 80%;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+#portfolio {
+  padding: 40px 0;
+  background: #eee;
+}
+ h2 {
+  color: #888;
+  font-weight: bold;
+  text-align: center;
+}
+.hr-dark {
+  margin: 30px auto 20px;
+  border-color: #888;
+  text-align: center;
+  max-width: 520px;
+}
+#portfolio ul {
+  list-style-type: none;
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+
+}
+#portfolio ul li {
+  margin-top: 20px;
+  max-width: 400px;
+}
+#portfolio img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+#contact {
+  border-top: 1px solid #aaa;
+  padding: 40px 0;
+  background: #eee;
+}
+#contact > div {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#contactForm {
+  max-width: 450px;
+  margin-top: 20px;
+  margin-left: 4px;
+}
+#contact > div {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+#contact > div > div {
+  margin-top: 20px;
+  padding: 10px;
+  width: 450px;
+}
+.form-group {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #bbb;
+}
+.form-group input , .form-group textarea {
+  width: 100%;
+  resize: none;
+  font-size: 1.2em;
+  font-weight: 400;
+  border: 0;
+  box-shadow: none;
+  background: 0 0;
+}
+textarea {
+  min-height: 200px;
+}
+#submit {
+  margin-top: 20px;
+}
+#foo {
+  border-top: 1px solid #aaa;
+  padding: 20px 0;
+  background: #eee;
+}
+#foo .container {
+  max-width: 1024px;
+  margin: 0 auto;
+  width: 95%;
+  padding: 0 5px;
+}
+#foo .col-md-2 a {
+  color: #111;
+}
+#foo p {
+  text-align: center;
+}

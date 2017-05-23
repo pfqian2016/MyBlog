@@ -1,0 +1,43 @@
+body {
+  width: 100%;
+  height: 100%;
+  background: #56351E;
+}
+.calculator {
+  margin: 200px auto 0;
+  border-radius: 5px;
+  width: 300px;
+  height: 400px;
+  background: #C47335;
+  text-align: center;
+}
+h3 {
+  margin: 0;
+  padding-top: 10px;
+  font-size: 1.2em;
+  font-family: 'Oleo Script', cursive;
+  color: #F19953;
+}
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 90%;
+  height: 2em;
+  background: #F19953;
+  text-align: right;
+}
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.button {
+  display: block;
+  float: left;
+  margin: 3px;
+  width: 66px;
+  height: 50px;
+}
