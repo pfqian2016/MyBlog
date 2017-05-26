@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -21,22 +22,33 @@ module.exports = {
             presets: ['latest']
           }
         }
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name]?[hash].[ext]',
+            outputPath: 'asset/img/'
+          }
+        }
       }
     ]
   },
   entry: {
-    carousel: './src/demo/focus-picture-carousel/focus-picture-carousel.js'
+    mayday: './src/demo/mayday/asset/js/main.js'
   },
   output: {
-    path: path.resolve(__dirname, 'dist/demo/focus-picture-carousel'),
-    filename: '[name][hash].js'
+    path: path.resolve(__dirname, 'dist/demo/mayday'),
+    filename: 'asset/js/[name][chunkhash].js'
   },
   plugins: [
-    new ExtractTextPlugin('[name][hash].css'),
+    new webpack.BannerPlugin('Copyright © 2017 - Pengfei Qian'),
+    new ExtractTextPlugin('asset/css/[name][chunkhash].css'),
     new htmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/demo/focus-picture-carousel/focus-picture-carousel.html',
-      chunks: ['carousel']
+      template: './src/demo/mayday/index.html',
+      chunks: ['mayday']
     })
   ]
 }
