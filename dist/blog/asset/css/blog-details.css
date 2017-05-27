@@ -23,8 +23,21 @@ a {
 .blog-container ol > li {
   margin: 8px 0;
 }
+.blog-container pre {
+  padding: 0;
+  margin: 0;
+  margin-top: 16px;
+  padding-top: 18px;
+  width: 100%;
+  background-color: #2b3a42;
+  color: #fff;
+  font-weight: 400;
+  overflow-x: scroll;
+}
 .blog-container .block-code {
   width: 80%;
+  padding: 0;
+  margin: 0;
   padding-left: 60px;
   position: relative;
   white-space: nowrap;
@@ -33,6 +46,7 @@ a {
   word-break: break-all;
   word-wrap: break-word;
   background: #fafafa;
+  color: #555;
   overflow-x: scroll;
 }
 .blog-container .block-code .code-numbering {
@@ -77,6 +91,8 @@ a {
     width: 90%;
     height: auto;
     margin-top: 14px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .blog-container .block-code {
     margin-right: -60px;
