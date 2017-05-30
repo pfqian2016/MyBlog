@@ -29,12 +29,17 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'asset/js/[name][hash].js'
+    filename: 'asset/js/[name][chunkhash].js'
   },
   plugins: [
-    new ExtractTextPlugin('asset/css/[name][hash].css'),
+    new ExtractTextPlugin('asset/css/[name][chunkhash].css'),
     new htmlWebpackPlugin({
       filename: 'index.html',
+      template: './src/main/index.html',
+      chunks: ['main']
+    }),
+    new htmlWebpackPlugin({
+      filename: 'page/2/index.html',
       template: './src/main/index.html',
       chunks: ['main']
     }),

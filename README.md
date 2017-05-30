@@ -5,6 +5,8 @@
 ### 用到的工具/库
 * jQuery
 * Boostrap
+* Webpack
+* Babel
 
 ### 已实现的基本功能
 1. ~~首页展示博客~~  

@@ -139,6 +139,29 @@ a {
 #main .article .entry .more {
   margin: 20px 0;
 }
+/*pages*/
+.pages {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+.pages a {
+  color: #2479cc;
+  font-size: 16px;
+  font-weight: 600;
+}
+.pages .btn-disable {
+  color: #b9b9b9;
+  cursor: default;
+}
+.pages .page-control li {
+  display: inline-block;
+  margin: 0 4px;
+}
+/*pages ends*/
 #footer {
   max-width: 965px;
   margin: 20px 0 20px 290px;

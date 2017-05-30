@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "build": "babel js -d lib",
-    "webpack": "webpack --config webpack.config.demo.js --colors"
+    "webpack": "webpack --config webpack.config.main.js --colors",
+    "test": "webpack --config webpack.config.test.js --colors",
+    "demo": "webpack --config webpack.config.demo.js --colors"
   },
   "devDependencies": {
     "babel-cli": "^6.0.0",
@@ -12,8 +14,10 @@
     "babel-preset-latest": "^6.24.1",
     "css-loader": "^0.28.2",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "style-loader": "^0.18.0",
+    "url-loader": "^0.5.8",
     "webpack": "^2.5.1"
   }
 }

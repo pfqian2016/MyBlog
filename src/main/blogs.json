@@ -1,5 +1,11 @@
 [
   {
+    "title": "Webpack2学习总结",
+    "pubtime": "2017年5月27日",
+    "path": "/blog/webpack-learning.html",
+    "abstract": "Webpack是前端的一个打包工具，通过打包将各个模块间复杂的依赖变得简单化，打包过后往往只有一个文件，博客中总结了Webpack一些常用的插件以及loader..."
+  },
+  {
     "title": "You are in your time zone",
     "pubtime": "2017年5月20日",
     "path": "/blog/you-are-in-your-time-zone.html",
