@@ -3,12 +3,46 @@ require('../css/main.css');
 $(document).ready(function(){
   //从服务器拉取博客简介
   let loadBlogs = (function() {
-    $.getJSON('blogs.json', (data) => {
-      for(let i = 0; i < Math.min(data.length, 10); i++) {
+    $.getJSON('/blogs.json', (data) => {
+      let pages = Math.ceil(data.length / 8);
+      addPagesNav(pages, $('#main'));
+      initPagesCtrl(pages,$('.pages'));
+      for(let i = 0; i < Math.min(data.length, 8); i++) {
         composeBlog(data[i]);
       }
     });
   })();
+  //分页函数
+  function addPagesNav(pages, appendToDom) {
+    if(pages === 1) return;
+    let html = '';
+    html += `<div class="pages">
+    <a href="#" data-control="prev"><i class="fa fa-chevron-left"></i> Previous</a>
+    <ul class="page-control">`;
+    for(let i = 1; i <= pages; i++) {
+      html += `<li data-index="${i}"><a href="#">${i}</a></li>`;
+    }
+    html += `</ul>
+    <a href="#" data-control="next">Next <i class="fa fa-chevron-right"></i></a>`;
+    $(appendToDom).append(html);
+  }
+  //初始化分页的点击事件
+  function initPagesCtrl(pages,pagesDom) {
+    $(pagesDom).find('a[data-control="prev"]')
+      .prop('href', 'javascript:;')
+      .addClass('btn-disable');
+    $(pagesDom).find('a[data-control="next"]').prop('href', '/page/' + pages);
+    $(pagesDom).find('.page-control li > a').each(function(index, element) {
+      if(index === 0) {
+        $(this)
+          .prop('href', 'javascript:;')
+          .addClass('btn-disable');
+      }else {
+        self = $(this);
+        $(this).prop('href', '/page/' + self.text());
+      }
+    })
+  }
   //将JSON数据组装成一条博客简介
   function composeBlog({title, pubtime, path, abstract}) {
     let html = '';
@@ -31,17 +65,17 @@ $(document).ready(function(){
   let $main = $("#main");
   $("#about").click(function(event){
     event.preventDefault();
-    $main.load("aboutme.html .about-container");
+    $main.load("/aboutme.html .about-container");
     $("#sidebar").removeClass("nav-show");
   });
   $("#links").click(function(event){
     event.preventDefault();
-    $main.load("friendlink.html .link-container");
+    $main.load("/friendlink.html .link-container");
     $("#sidebar").removeClass("nav-show");
   });
   $("#demo").click(function(event){
     event.preventDefault();
-    $main.load("demo.html .demo-container");
+    $main.load("/demo.html .demo-container");
     $("#sidebar").removeClass("nav-show");
   });
   $("#nav-btn").click(function(event){

@@ -39,6 +39,11 @@ module.exports = {
       chunks: ['main']
     }),
     new htmlWebpackPlugin({
+      filename: 'page/2/index.html',
+      template: './src/main/index.html',
+      chunks: ['main']
+    }),
+    new htmlWebpackPlugin({
       filename: 'aboutme.html',
       template: './src/main/aboutme.html',
       chunks: ['']

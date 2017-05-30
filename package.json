@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "build": "babel js -d lib",
-    "webpack": "webpack --config webpack.config.demo.js --colors"
+    "webpack": "webpack --config webpack.config.main.js --colors",
+    "test": "webpack --config webpack.config.test.js --colors",
+    "demo": "webpack --config webpack.config.demo.js --colors"
   },
   "devDependencies": {
     "babel-cli": "^6.0.0",
