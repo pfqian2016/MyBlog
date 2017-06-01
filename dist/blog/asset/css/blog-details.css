@@ -1,6 +1,17 @@
 a {
   text-decoration: none;
 }
+/** {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url(../img/bg_blog.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100vh;
+  background-size: 100% 100vh;
+  background-attachment: fixed;
+}*/
 .blog-container {
   max-width: 965px;
   margin: 0 auto;
