@@ -38,7 +38,7 @@ $(document).ready(function(){
           .prop('href', 'javascript:;')
           .addClass('btn-disable');
       }else {
-        self = $(this);
+        let self = $(this);
         $(this).prop('href', '/page/' + self.text());
       }
     })
