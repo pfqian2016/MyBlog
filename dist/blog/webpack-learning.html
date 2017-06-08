@@ -174,6 +174,46 @@
       <li>使用extract-text-webpack-plugin将css异步导入html的head标签中</li>
       <li>占位符hash和chunkhash的区别：hash是编译过程产生的一个总的hash，而不是单个文件的hash，只要文件有变动hash值就会改变，我们不希望改变一个文件就导致所有输出文件hash值都改变，这样无法很好的利用浏览器缓存</li>
     </ol>
+    <h2>Update：2017.06.08</h2>
+    <h3>Webpack2与Vue.js的配合使用</h3>
+    <p>要解析vue文件，同样需要一个loader：vue-loader，这个loader用来匹配以.vue为后缀的文件</p>
+    <p>同样要使用vue-loader先要进行安装</p>
+    <blockquote>
+        npm install --save-dev vue-loader
+    </blockquote>
+    <p>然而光有一个loader还是不行的，还需要安装一系列的依赖，由于npm使用国外镜像源，会导致速度有很大的影响，这里可以使用<a href="http://riny.net/2014/cnpm/">国内的镜像源</a>然后继续安装相关的依赖。其中有一个vue-hot-reload-api是用于vue热更新的，其余的比较好理解</p>
+    <blockquote>
+        cnpm install --save-dev vue vue-hot-reload-api vue-html-loader vue-style-loader vue-template-compiler
+    </blockquote>
+    <p>在编写vue组件的时候，会经常用到ES6的语法，所以还是需要用到babel-loader来进行转码，上面的文章已经提到了，下面介绍一些新加的。由于需要用到热更新，故还需要为babel-loader添加一个叫做transform-runtime的插件</p>
+    <blockquote>
+        cnpm install --save-dev babel-plugin-transform-runtime babel-runtime
+    </blockquote>
+    <strong>webpack.config.js</strong>
+    <pre>
+        ...//省略部分代码
+        {
+            test:/\.js$/,
+            exclude: /node_module/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['env'],
+                    plugins: ['transform-runtime']//添加的插件
+                }
+            }
+        }
+    </pre>
+    <p>然而就这样在终端运行npm run dev过后打开浏览器输入http://localhost:8080 仍然不能访问到我们所想要的页面，这是为什么呢？打开控制台发现有一个这样的错误</p>
+    <img src="./asset/img/vue-runtime-error.png" alt="vue-error">
+    <p>这个问题已经由vue的作者尤大在<a href="https://github.com/vuejs-templates/webpack/issues/215">Github</a>上给出了解决方案，在配置文件中将这段代码添加进去网页便可正常显示</p>
+    <pre>
+        resolce: {
+            alias: {
+                vue: 'vue/dist/vue.js'
+            }
+        }
+    </pre>
   </div>
 </body>
 </html>
