@@ -567,6 +567,25 @@ a {
   align-items: flex-start;
   color: #555;
 }
+.title {
+  position: relative;
+}
+.title::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background-color: #2479cc;
+  top: 100%;
+  left: 50%;
+  position: absolute;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+}
+.title:hover::after {
+  width: 100%;
+  left: 0;
+}
 #main .article .head .title a {
   color: #555;
 }

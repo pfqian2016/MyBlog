@@ -118,7 +118,7 @@ $(document).ready(function () {
       if (index === 0) {
         $(this).prop('href', '/');
       } else {
-        self = $(this);
+        var self = $(this);
         $(this).prop('href', 'javascript:;').addClass('btn-disable');
       }
     });
