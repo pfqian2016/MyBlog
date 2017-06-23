@@ -1,5 +1,11 @@
 [
   {
+    "title":"利用ES6语法对数组去重",
+    "pubtime":"2017年6月20日",
+    "path":"/blog/deduplicate-array.html",
+    "abstract":"最近在做项目的时候遇到的一个小问题，需要对返回的一组对象数组进行去重，而Set只对基本类型有用，引用类型不起作用，所以考虑了Map来进行去重操作..."
+  },
+  {
     "title": "Webpack2学习总结",
     "pubtime": "2017年5月27日",
     "path": "/blog/webpack-learning.html",
