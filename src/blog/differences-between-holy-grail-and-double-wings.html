@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/asset/img/icon.jpg">
+    <link rel="stylesheet" href="asset/css/blog-details.css">
+    <title>Differences Between Holy Grail and Double Wings</title>
+</head>
+<body>
+    <div class="blog-container">
+        <h1 class="blog-title">浅谈圣杯布局和双飞翼布局</h1>
+        <p>圣杯布局和双飞翼布局是现在网页中比较常见的布局，两者都是顶部和底部固定并且宽度占满整个屏幕，中间有一个三栏布局，左右两栏都为固定宽度，中间一栏用于放置主页面，并且自适应填满屏幕。在整个文档流渲染的过程中，要让中间一栏首先渲染。下面就分别介绍这两种布局。</p>
+        <h2>圣杯布局</h2>
+        <p>圣杯布局的来历是一篇国外的文章<a href="https://alistapart.com/article/holygrail">In Search of the Holy Grail</a>，由于中间一栏要优先渲染，所以两边边栏需要用负margin将元素拉到需要的位置，效果图如下：</p>
+        <img src="asset/img/holy_grail.png" alt="holy_grail">
+        <p>具体的实现方法：</p>
+        <p>
+            <strong>HTML</strong>
+        </p>
+        <img src="asset/img/holy_grail_html.png" alt="html">
+        <p>
+            <strong>CSS</strong>
+        </p>
+        <pre class="block-code">
+            <ul class="code-numbering">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li>31</li>
+                <li>32</li>
+                <li>33</li>
+                <li>34</li>
+                <li>35</li>
+                <li>36</li>
+                <li>37</li>
+                <li>38</li>
+                <li>39</li>
+                <li>40</li>
+                <li>41</li>
+                <li>42</li>
+                <li>43</li>
+                <li>44</li>
+                <li>45</li>
+            </ul>
+            <code class="blog-code">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 764px;
+}
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #999;
+}
+.container {
+    padding-left: 180px;
+    padding-right: 200px;
+}
+.main,
+.left,
+.right {
+    position: relative;
+    float: left;
+    min-height: 130px;
+}
+.main {
+    width: 100%;
+    background-color: #f60;
+}
+.left {
+    margin-left: -100%;
+    left: -180px;
+    width: 180px;
+    background-color: #42b983;
+}
+.right {
+    margin-left: -200px;
+    right: -200px;
+    width: 200px;
+    background-color: #8913dd;
+}
+footer {
+    width: 100%;
+    height: 30px;
+    clear: both;
+    background-color: yellow;
+}
+            </code>
+        </pre>
+        <h2>双飞翼布局</h2>
+        <p>双飞翼布局源自淘宝UED，同圣杯布局一样，中间栏需要优先渲染，但是在解决中间栏内容被遮挡的情况用的是将中间的div包裹在另外一个div中，利用内部div的margin值来解决遮挡问题。</p>
+        <img src="asset/img/double_wings.png" alt="double_wings">
+        <p>具体实现方法：</p>
+        <p>
+            <strong>HTML</strong>
+        </p>
+        <img src="asset/img/double_wings_html.png" alt="html">
+        <p>
+            <strong>CSS</strong>
+        </p>
+        <pre class="block-code">
+            <ul class="code-numbering">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li>31</li>
+                <li>32</li>
+                <li>33</li>
+                <li>34</li>
+                <li>35</li>
+                <li>36</li>
+                <li>37</li>
+                <li>38</li>
+                <li>39</li>
+                <li>40</li>
+                <li>41</li>
+                <li>42</li>
+            </ul>
+            <code class="blog-code">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 764px;
+}
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #999;
+}
+.main,
+.sub,
+.extra {
+    float: left;
+    min-height: 130px;
+}
+.main {
+    width: 100%;
+    background-color: #f60;
+}
+.main-inner {
+    margin-left: 180px;
+    margin-right: 200px;
+}
+.sub {
+    margin-left: -100%;
+    width: 180px;
+    background-color: #42b983;
+}
+.extra {
+    margin-left: -200px;
+    width: 200px;
+    background-color: #8913dd;
+}
+footer {
+    clear: both;
+    width: 100%;
+    height: 30px;
+    background-color: yellow;
+}
+            </code>
+        </pre>
+        <h2>两种布局区别在哪？</h2>
+        <p>1. 首先比较清楚地可以看见，在HTML代码中，双飞翼布局并没有像圣杯布局那样将三栏的div放在同一个container中，而是单独将中间栏的div包裹在了一个单独的div中，这个作用稍后来介绍。</p>
+        <p>2. 其次，我们在CSS中可以看到，在双飞翼布局中，三栏元素的样式中并没有position:relative这个属性，说明在双飞翼布局中，两个边栏不是靠相对定位来放置的。</p>
+        <p>3. 然后我们还可以看到双飞翼布局中，中间栏的遮挡问题不像圣杯布局中靠外面container的padding来解决的，而是将其放在一个div中，然后利用内部div的margin值来解决。</p>
+        <h2>这样做的好处是什么？</h2>
+        <p>在双飞翼布局中，多用了一个div，从而减少了四个CSS属性（圣杯布局中，container的padding-left和padding-right，左右两个div的相对定位position:relative和left,right属性一共六个属性，双飞翼布局中增加了main中的margin-left和margin-right属性两个）。主要还是在解决中间栏元素遮挡问题上的思路有一些不同。</p>
+    </div>
+</body>
+</html>
