@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Structure and Algorithm</title>
+    <link rel="icon" href="/asset/img/icon.jpg">
+    <link rel="stylesheet" href="asset/css/blog-details.css">
+</head>
+<body>
+    <div class="blog-container">
+        <h1 class="blog-title">常用数据结构与算法的JavaScript实现</h1>
+        <p>1. 单向链表</p>
+        <pre>
+    function LinkedList() {
+        function Node(data) {
+            this.data = data;
+            this.next = null;
+        }
+        let head = new Node('head');
+        let length = 0;
+        return {
+            init() {
+                this.append('first');
+                this.append('second');
+                this.append('third');
+            },
+            append(data) {
+                let node = new Node(data);
+                let current = head;
+                while(current.next !== null) {
+                    current = current.next;
+                }
+                current.next = node;
+                length++;
+            },
+            insert(prev, data) {
+                let node = new Node(data);
+                let current = head;
+                while(current.data !== prev) {
+                    current = current.next;
+                }
+                node.next = current.next;
+                current.next = node;
+                length++;
+            },
+            findByIndex(pos) {
+                if(pos > length) {
+                    throw new Error('Error!Out of range');
+                }
+                let current = head;
+                while(pos !== 0) {
+                    current = current.next;
+                    pos--;
+                }
+                return current;
+            },
+            find(data) {
+                let current = head;
+                while(current !== null) {
+                    if(current.data === data) {
+                        return current;
+                    }else {
+                        current = current.next;
+                    }
+                }
+                throw new Error('Error!Data not found');
+            },
+            delete(pos) {
+                if(pos > length) {
+                    throw new Error('Error!Out of range');
+                }
+                let current = head;
+                while(pos !== 1) {
+                    current = current.next;
+                    pos--;
+                }
+                current.next = current.next.next;
+                length--;
+            },
+            size() {
+                return length;
+            },
+            toString() {
+                let current = head;
+                let arr = [];
+                while(current) {
+                    arr.push(current.data);
+                    current = current.next;
+                }
+                return arr;
+            }
+        }
+    }
+        </pre>
+        <p>2. 双向链表</p>
+        <pre>
+    function DoubleLinkedList() {
+        function Node(data) {
+            this.data = data;
+            this.prev = null;
+            this.next = null;
+        }
+        let head = new Node('head');
+        let length = 0;
+        return {
+            init() {
+                this.append('first');
+                this.append('second');
+                this.append('third');
+            },
+            append(data) {
+                let node = new Node(data);
+                let current = head;
+                while(current.next !== null) {
+                    current = current.next;
+                }
+                current.next = node;
+                node.prev = current;
+                length++;
+            },
+            insert(prev, data) {
+                let node = new Node(data);
+                let current = head;
+                while(current.data !== prev) {
+                    current = current.next;
+                }
+                node.next = current.next;
+                current.next.prev = node
+                node.prev = current;
+                current.next = node;
+                length++;
+            },
+            findByIndex(pos) {
+                if(pos > length) {
+                    throw new Error('Error!Out of range');
+                }
+                let current = head;
+                while(pos !== 0) {
+                    current = current.next;
+                    pos--;
+                }
+                return current;
+            },
+            find(data) {
+                let current = head;
+                while(current !== null) {
+                    if(current.data === data) {
+                        return current;
+                    }else {
+                        current = current.next;
+                    }
+                }
+                throw new Error('Error!Data not found');
+            },
+            delete(pos) {
+                if(pos > length) {
+                    throw new Error('Error!Out of range');
+                }
+                let current = head;
+                while(pos !== 1) {
+                    current = current.next;
+                    pos--;
+                }
+                current.next = current.next.next;
+                length--;
+            },
+            size() {
+                return length;
+            },
+            toString() {
+                let current = head;
+                let arr = [];
+                while(current) {
+                    arr.push(current.data);
+                    current = current.next;
+                }
+                return arr;
+            }
+        }
+    }
+        </pre>
+        <p>3. 插入排序</p>
+        <pre>
+    function InsertSort(arr) {
+        for(let i = 1; i < arr.length; i++) {
+            if(arr[i] < arr[i - 1]) {
+                let num = arr[i];
+                arr[i] = arr[i - 1];
+                for(var j = i - 2; num < arr[j]; j--) {
+                    arr[j + 1] = arr[j];
+                }
+                arr[j + 1] = num;
+            }
+        }
+        return arr;
+    }
+        </pre>
+        <p>4. 冒泡排序</p>
+        <pre>
+    function BubbleSort(arr) {
+        for(let n = arr.length; n > 0; n--) {
+            for(var i = 0; i < n - 1; i++) {
+                if(arr[i] > arr[i + 1]) {
+                    [arr[i], arr[i + 1]] = [arr[i + 1],arr[i]];
+                }
+            }
+        }
+        return arr;
+    }
+        </pre>
+        <p>5. 快速排序</p>
+        <pre>
+    function QuickSort(arr) {
+        let lens = arr.length;
+        QSort(arr, 0, lens - 1);
+        return arr;
+    }
+    function partition(arr, low, high) {
+        let pivotkey = arr[low];
+        while(low < high) {
+            while(low < high &amp;&amp; arr[high] >= pivotkey) {
+                --high;
+            }
+            arr[low] = arr[high];
+            while(low < high &amp;&amp; arr[low] <= pivotkey) {
+                ++low;
+            }
+            arr[high] = arr[low];
+        }
+        arr[low] = pivotkey;
+        return low;
+    }
+    function QSort(arr, low, high) {
+        if(low < high) {
+            let pivotloc = partition(arr, low, high);
+            QSort(arr, low, pivotloc - 1);
+            QSort(arr,pivotloc + 1, high);
+        }
+    }
+        </pre>
+    </div>
+</body>
+</html>

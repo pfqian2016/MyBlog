@@ -1,4 +1,16 @@
 [
+    {
+        "title":"浅谈圣杯布局和双飞翼布局",
+        "pubtime": "2017年7月8日",
+        "path": "/blog/differences-between-holy-grail-and-double-wings.html",
+        "abstract":"圣杯布局和双飞翼布局是两种非常常见的经典布局，在许多网站布局中都会有应用到，这篇文章简单的介绍了两种布局的实现方法，并且对比了两种方法在实现上面有什么区别..."
+    },
+  {
+      "title":"常用数据结构与算法的JavaScript实现",
+      "pubtime":"2017年6月28日",
+      "path":"/blog/data-structure-and-algorithm.html",
+      "abstract":"数据结构与算法是计算机科学里面非常重要的一门学科，其中的奥秘与精髓为我们减轻了很多编程上的负担，学好算法也能帮助我们在工作中更加高效的解决问题..."
+  },
   {
     "title":"利用ES6语法对数组去重",
     "pubtime":"2017年6月20日",
