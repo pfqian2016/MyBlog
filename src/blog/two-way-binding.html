@@ -10,8 +10,12 @@
 </head>
 <body>
     <div class="blog-container">
+        <ul class="breadcrumb">
+            <li><a href="/">主页</a></li>
+            <li class="active">文章</li>
+        </ul>
         <h1 class="blog-title">原生JavaScript实现双向数据绑定</h1>
-        <p>何为双向数据绑定？在MV*模型中，用户在View层修改了某个对象属性的值，在Model层中该对象属性会自动更新为新的值，反之亦然。举个例子，如果页面上有一个表单字段用于输入用户的name属性，user对象中的name属性也会自动更新；反之，如果修改了user对象中的name属性，这个值会直接影响绑定到这个属性上的UI的值。</p>
+        <p>何为双向数据绑定？在MVVM模型中，用户在View层修改了某个对象属性的值，在Model层中该对象属性会自动更新为新的值，反之亦然。举个例子，如果页面上有一个表单字段用于输入用户的name属性，user对象中的name属性也会自动更新；反之，如果修改了user对象中的name属性，这个值会直接影响绑定到这个属性上的UI的值。</p>
         <img src="asset/img/two_way_binding.gif" alt="binding">
         <p>上面是一个实现的效果，几种实现双向数据绑定的方式：</p>
         <p>1. 发布-订阅者模式（观察者模式）</p>

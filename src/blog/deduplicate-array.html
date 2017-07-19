@@ -10,6 +10,10 @@
 </head>
 <body>
     <div class="blog-container">
+        <ul class="breadcrumb">
+            <li><a href="/">主页</a></li>
+            <li class="active">文章</li>
+        </ul>
         <h1 class="blog-title">利用ES6语法对数组去重</h1>
         <p>最近在写一个网易新闻的WebApp，直接调用别人的接口可以获取到新闻数据。在这个项目中有一个加载更多的功能，实现逻辑是第一次请求page=1的新闻，接收以后下一次请求page=2的新闻。这样的话如果在短时间内点击加载更多并不会出现太多的问题，但是如果第一次请求到新闻以后，过了很长一段短时间再请求第二次，那么第二次请求到的前几条数据可能和第一次请求道的后几条是重复的。于是打算想个方法来解决这个问题</p>
         <p>其实一开始想到的方法是ES6里面的<a href="http://es6.ruanyifeng.com/#docs/set-map#Set">Set数据结构</a>，Set结合REST语法可以用很简单的几行代码解决数组重复的问题</p>
