@@ -1,10 +1,16 @@
 [
-  {
-      "title":"浅谈圣杯布局和双飞翼布局",
-      "pubtime": "2017年7月8日",
-      "path": "/blog/differences-between-holy-grail-and-double-wings.html",
-      "abstract":"圣杯布局和双飞翼布局是两种非常常见的经典布局，在许多网站布局中都会有应用到，这篇文章简单的介绍了两种布局的实现方法，并且对比了两种方法在实现上面有什么区别..."
-  },
+    {
+        "title": "原生JavaScript实现双向数据绑定",
+        "pubtime": "2017年7月11日",
+        "path": "/blog/two-way-binding.html",
+        "abstract": "在MVVM框架中，基本都要满足实现了双向数据绑定功能，他们的实现方式有所不同，这篇文章介绍了一种基于观察者模式的实现双向数据绑定的方式..."
+    },
+    {
+        "title":"浅谈圣杯布局和双飞翼布局",
+        "pubtime": "2017年7月8日",
+        "path": "/blog/differences-between-holy-grail-and-double-wings.html",
+        "abstract":"圣杯布局和双飞翼布局是两种非常常见的经典布局，在许多网站布局中都会有应用到，这篇文章简单的介绍了两种布局的实现方法，并且对比了两种方法在实现上面有什么区别..."
+    },
   {
       "title":"常用数据结构与算法的JavaScript实现",
       "pubtime":"2017年6月28日",
