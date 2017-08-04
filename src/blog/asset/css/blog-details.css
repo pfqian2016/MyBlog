@@ -85,6 +85,10 @@ a {
 .breadcrumb > li > a {
     color: #2479cc;
 }
+.breadcrumb > li > a:hover {
+    color: #245688;
+    text-decoration: underline;
+}
 .breadcrumb > li + li:before {
   padding: 0 5px;
   color: #ccc;

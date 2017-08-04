@@ -145,8 +145,7 @@ Object.defineProperty(text, 'name', {
     let val = event.target.value;
     text.name = val;
 }
-nameInput.addEventListener('keyup', handler ,false);
-nameInput.addEventListener('change', handler, false);
+nameInput.addEventListener('input', handler ,false);
 nameInput.value = text.name;
 display.innerHTML = text.name;
 btn.addEventListener('click', function() {
